@@ -181,8 +181,6 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-## 👥 Authors <a name="authors"></a>
-
 👤 **Riyaz Ahmed**
 
 - GitHub: [@r-ahmed2022](https://github.com/r-ahmed2022)
@@ -217,9 +215,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project then do share this project with your friends and don't forget to give a ⭐ star on it"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,13 +223,8 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+Microverse
 
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

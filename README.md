@@ -59,7 +59,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Vet Clinic Database] <a name="about-project"></a>
 
-This is a relational database to create the data structure for a vet clinic. In this project you will create a complete database with data about:
+This is a relational database to create the data structure for a vet clinic. In this project we will create a complete database with data about:
 
 - animals
 - animals' owners
@@ -105,13 +105,7 @@ This is a relational database to create the data structure for a vet clinic. In 
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- PostgreSQL 
 
 ### Setup
 

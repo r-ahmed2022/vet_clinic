@@ -16,38 +16,36 @@ select * from animals where name not like '%Gabumon'
 
 select * from animals where weight_kg between  10.4 and 17.3
 
-vetclinic=# BEGIN
-vetclinic-# ;
+#BEGIN;
 BEGIN
-vetclinic=*# UPDATE ANIMALS SET SPECIES = 'UNSPECIFIED' WHERE SPECIES IS NULL
-vetclinic-*# ;
+#UPDATE ANIMALS SET SPECIES = 'UNSPECIFIED' WHERE SPECIES IS NULL;
 UPDATE 11
-vetclinic=*# rollback;
+#rollback;
 ROLLBACK
-vetclinic=# update animals set species = 'digimon' where name like '%mon';
+# update animals set species = 'digimon' where name like '%mon';
 UPDATE 6
-vetclinic=# update animals set species = 'pokemon' where species is null;
+# update animals set species = 'pokemon' where species is null;
 UPDATE 5
 COMMIT;
-vetclinic=# BEGIN;
+# BEGIN;
 BEGIN
-vetclinic=*# DELETE FROM ANIMALS;
+# DELETE FROM ANIMALS;
 DELETE 11
-vetclinic=*# ROLLBACK;
+# ROLLBACK;
 ROLLBACK
-vetclinic=# delete from animals where date_of_birth > '2022-01-01';
+# delete from animals where date_of_birth > '2022-01-01';
 DELETE 1
-vetclinic=# BEGIN;
+# BEGIN;
 BEGIN
-vetclinic=*# SAVEPOINT DEL_ANIMAL_JAN22;
+# SAVEPOINT DEL_ANIMAL_JAN22;
 SAVEPOINT
-vetclinic=*# update animals set weight_kg = weight_kg * -1;
+# update animals set weight_kg = weight_kg * -1;
 UPDATE 10
-vetclinic=*# rollback to DEL_ANIMAL_JAN22;
+# rollback to DEL_ANIMAL_JAN22;
 ROLLBACK
 vetclinic=*# update animals set weight_kg = weight_kg * -1 where weight_kg < 0;
-UPDATE 0
-vetclinic=*# commit;
+UPDATE 4
+# commit;
 COMMIT
 
 select count(*) as total_animals from animals 

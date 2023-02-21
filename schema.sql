@@ -10,4 +10,4 @@ CREATE TABLE animals(
   PRIMARY KEY(id) 
 );
 
- alter table animals add column spieces varchar(40)
+ alter table animals add column species varchar(40)

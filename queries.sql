@@ -18,32 +18,34 @@ select * from animals where weight_kg between  10.4 and 17.3
 
 #BEGIN;
 BEGIN
-#UPDATE ANIMALS SET SPECIES = 'UNSPECIFIED' WHERE SPECIES IS NULL;
+# UPDATE ANIMALS SET SPECIES = 'UNSPECIFIED' WHERE SPECIES IS NULL;
 UPDATE 11
+# select * from animals
 #rollback;
 ROLLBACK
 # update animals set species = 'digimon' where name like '%mon';
 UPDATE 6
+# select * from animals
 # update animals set species = 'pokemon' where species is null;
-UPDATE 5
+UPDATE 4
+# select * from animals
 COMMIT;
+# select * from animals
 # BEGIN;
-BEGIN
 # DELETE FROM ANIMALS;
-DELETE 11
+DELETE 10
 # ROLLBACK;
-ROLLBACK
 # delete from animals where date_of_birth > '2022-01-01';
 DELETE 1
+# select * from animals
 # BEGIN;
-BEGIN
 # SAVEPOINT DEL_ANIMAL_JAN22;
 SAVEPOINT
 # update animals set weight_kg = weight_kg * -1;
 UPDATE 10
 # rollback to DEL_ANIMAL_JAN22;
 ROLLBACK
-vetclinic=*# update animals set weight_kg = weight_kg * -1 where weight_kg < 0;
+# update animals set weight_kg = weight_kg * -1 where weight_kg < 0;
 UPDATE 4
 # commit;
 COMMIT
@@ -54,8 +56,7 @@ select count(*) as not_escaped from animals where escape_attempts = 0
 
 select avg(weight_kg) as Average_weight from animals 
 
-select name, escape_attempts from animals where escape_attempts =(select max(escape_attempts) from animals);
-
+select neutered, max(escape_attempts) as max_escapes from animals group by neutered
 select species, max(weight_kg), min(weight_kg) from animals group by species
 
 select species, avg(escape_attempts) as average_attempts from animals

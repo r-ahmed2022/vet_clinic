@@ -27,13 +27,13 @@ ROLLBACK
 UPDATE 6
 # select * from animals
 # update animals set species = 'pokemon' where species is null;
-UPDATE 4
+UPDATE 5
 # select * from animals
 COMMIT;
 # select * from animals
 # BEGIN;
 # DELETE FROM ANIMALS;
-DELETE 10
+DELETE 11
 # ROLLBACK;
 # delete from animals where date_of_birth > '2022-01-01';
 DELETE 1

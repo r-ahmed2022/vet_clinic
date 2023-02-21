@@ -7,5 +7,7 @@ CREATE TABLE animals(
   escape_attempts   INT,
   neutered boolean,
   weight_kg decimal,
-  PRIMARY KEY(id) G
+  PRIMARY KEY(id) 
 );
+
+ alter table animals add column spieces varchar(40)

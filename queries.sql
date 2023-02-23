@@ -62,3 +62,17 @@ select species, max(weight_kg), min(weight_kg) from animals group by species
 select species, avg(escape_attempts) as average_attempts from animals
 where extract(year from date_of_birth) between '1990' and '2000' group by species 
 
+-- joins
+select name from animals inner join owners on animals.owner_id = owners.id where full_name = 'Melody Pond';
+
+select animals.name from animals INNER JOIN species on animals.species_id=species.id where species.name='Pokemon';
+
+select animals.name, owners.full_name from animals right JOIN owners on animals.owner_id=owners.id;
+
+select species.name, count(animals.name) as numbers from animals inner JOIN species on animals.species_id=species.id group by species.name;
+
+select animals.name from animals inner join owners on animals.owner_id=owners.id where owners.full_name = 'Jennifer Orwell';
+
+select animals.name from animals inner join owners on animals.owner_id=owners.id where owners.full_name = 'Dean Winchester' and animals.escape_attempts = 0;
+
+select full_name, count(full_name) from animals inner join owners on animals.owner_id=owners.id group by full_name;

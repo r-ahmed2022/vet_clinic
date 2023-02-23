@@ -62,8 +62,8 @@ update animals set owner_id = 6 where name = 'Charmander' OR NAME = 'Squirtle' O
 UPDATE 3
 select * from animals
 
-update animals set owner_id = 4 where name = 'Angemon' OR NAME = 'Boarmon';
 UPDATE 2
+update animals set owner_id = 4 where name = 'Angemon' OR NAME = 'Boarmon';
 select * from animals
 
 

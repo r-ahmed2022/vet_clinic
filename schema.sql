@@ -28,6 +28,9 @@ create table species(
 	primary key(id)
 );  
 
+select * from  species
+
+
 CREATE SEQUENCE IF NOT EXISTS animals_autoincr;
 
 SELECT SETVAL('animals_autoincr', (
@@ -41,6 +44,7 @@ SET DEFAULT nextval('animals_autoincr'::regclass);
 ALTER SEQUENCE animals_autoincr
 OWNED BY animals.id;
 
+--drop column species
 alter table animals drop column species
 
 select * from animals
@@ -60,15 +64,3 @@ ADD CONSTRAINT fk_key1
 FOREIGN KEY (owner_id) 
 REFERENCES owners (id);
 
-select name from animals inner join owners on animals.owner_id = owners.id where full_name = 'Melody Pond';
-
-select animals.name from animals INNER JOIN species on animals.species_id=species.id where species.name='Pokemon';
-
-select animals.name, owners.full_name from animals right JOIN owners on animals.owner_id=owners.id;
-
-select species.name, count(animals.name) as numbers from animals inner JOIN species on animals.species_id=species.id group by species.name;
-
- select animals.name from animals inner join owners on animals.owner_id=owners.id where owners.full_name = 'Jennifer Orwell';
-
- select animals.name from animals inner join owners on animals.owner_id=owners.id where owners.full_name = 'Dean Winchester' and animals.escape_attempts = 0;
- select full_name, count(full_name) from animals inner join owners on animals.owner_id=owners.id group by full_name;

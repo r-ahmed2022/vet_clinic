@@ -43,7 +43,6 @@ SET DEFAULT nextval('animals_autoincr'::regclass);
 ALTER SEQUENCE animals_autoincr
 OWNED BY animals.id;
 
---drop column species
 alter table animals drop column species
 
 select * from animals

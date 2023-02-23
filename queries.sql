@@ -61,3 +61,4 @@ select species, max(weight_kg), min(weight_kg) from animals group by species
 
 select species, avg(escape_attempts) as average_attempts from animals
 where extract(year from date_of_birth) between '1990' and '2000' group by species 
+

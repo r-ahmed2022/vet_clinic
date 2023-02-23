@@ -24,7 +24,6 @@ select * from owners
 create table species(
 	id serial,
 	full_name varchar(40),
-	age int,
 	primary key(id)
 );  
 

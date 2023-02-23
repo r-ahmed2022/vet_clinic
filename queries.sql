@@ -76,3 +76,33 @@ select animals.name from animals inner join owners on animals.owner_id=owners.id
 select animals.name from animals inner join owners on animals.owner_id=owners.id where owners.full_name = 'Dean Winchester' and animals.escape_attempts = 0;
 
 select full_name, count(full_name) from animals inner join owners on animals.owner_id=owners.id group by full_name;
+
+
+select * from vets
+
+select * from visits
+
+SELECT animals.name FROM animals INNER JOIN visits ON animal_id = animals.id WHERE vet_id=1 ORDER BY visits.visit_date DESC LIMIT 1;
+
+SELECT COUNT(*) FROM species INNER JOIN specializations ON specializations.species_id = species.id WHERE vet_id = 3;
+
+SELECT species.name, vets.name FROM species INNER JOIN specializations ON specializations.species_id = species.id 
+RIGHT JOIN vets ON specializations.vet_id = vets.id;
+
+SELECT animals.name FROM animals INNER JOIN visits ON visits.animal_id = animals.id 
+INNER JOIN vets ON visits.vet_id = vets.id WHERE vets.name = 'Stephanie Mendez' AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT animals.name, COUNT(*) as total FROM animals INNER JOIN visits ON visits.animal_id = animals.id GROUP BY animals.name ORDER BY total DESC LIMIT 1;
+
+SELECT animals.name, visits.visit_date FROM animals INNER JOIN visits ON visits.animal_id = animals.id INNER JOIN vets ON visits.vet_id = vets.id WHERE vets.name = 'Maisy Smith' ORDER BY visits.visit_date ASC LIMIT 1;
+
+SELECT animals.name as Animals_Name, Vets.name as Vets_Name, visits.visit_date FROM animals INNER JOIN visits ON visits.animal_id = animals.id INNER JOIN vets ON visits.vet_id = vets.id ORDER BY visits.visit_date DESC LIMIT 1;
+
+SELECT COUNT(*) FROM visits WHERE vet_id = ( SELECT vets.id FROM vets left JOIN specializations ON vets.id = specializations.vet_id WHERE species_id IS NULL);
+
+SELECT species.name, COUNT(species.name) as total FROM visits JOIN vets ON visits.vet_id = vets.id JOIN animals ON visits.animal_id = animals.id JOIN species ON animals.species_id = species.id WHERE vets.name = 'Maisy Smith'GROUP BY species.name ORDER BY total DESC LIMIT 1;
+
+
+
+
+

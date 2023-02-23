@@ -67,6 +67,38 @@ update animals set owner_id = 4 where name = 'Angemon' OR NAME = 'Boarmon';
 select * from animals
 
 
+INSERT INTO vets (name, age, date_of_graduation)
+VALUES ('William Tatcher', 45, '2000-04-23'),
+('Maisy Smith', 26, '2019-01-17'),
+('Stephanie Mendez', 64, '1981-05-04'),
+('Jack Harkness', 38, '2008-07-08')
+
+INSERT INTO specializations (species_id, vet_id) SELECT species.id, vets.id FROM species, vets where species.name = 'Pokemon' AND vets.name = 'William Tatcher';
+INSERT INTO specializations (species_id, vet_id) SELECT species.id, vets.id FROM species, vets where species.name = 'Digimon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO specializations (species_id, vet_id) SELECT species.id, vets.id FROM species, vets where species.name = 'Pokemon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO specializations (species_id, vet_id) SELECT species.id, vets.id FROM species, vets where species.name = 'Digimon' AND vets.name = 'Jack Harkness';
+
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-05-24' FROM animals, vets where animals.name = 'Agumon' AND vets.name = 'William Tatcher';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-07-22' FROM animals, vets where animals.name = 'Agumon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2021-02-02' FROM animals, vets where animals.name = 'Gabumon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-01-05' FROM animals, vets where animals.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-03-08' FROM animals, vets where animals.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-05-14' FROM animals, vets where animals.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2021-05-04' FROM animals, vets where animals.name = 'Devimon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2021-02-24' FROM animals, vets where animals.name = 'Charmander' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2019-12-21' FROM animals, vets where animals.name = 'Plantmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-08-10' FROM animals, vets where animals.name = 'Plantmon' AND vets.name = 'William Tatcher';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2021-04-07' FROM animals, vets where animals.name = 'Plantmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2019-09-29' FROM animals, vets where animals.name = 'Squirtle' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-10-03' FROM animals, vets where animals.name = 'Angemon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-11-04' FROM animals, vets where animals.name = 'Angemon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2019-01-24' FROM animals, vets where animals.name = 'Boarmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2019-05-15' FROM animals, vets where animals.name = 'Angemon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-02-27' FROM animals, vets where animals.name = 'Angemon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-08-03' FROM animals, vets where animals.name = 'Angemon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2020-04-24' FROM animals, vets where animals.name = 'Blossom' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT animals.id, vets.id, '2021-01-11' FROM animals, vets where animals.name = 'Blossom' AND vets.name = 'William Tatcher';
+
 
 
 

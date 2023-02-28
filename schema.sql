@@ -101,7 +101,4 @@ CREATE INDEX owners_email_asc ON owners(email ASC);
 
 
 
--- increase speed
-CREATE INDEX animal_id_index ON visits(animal_id ASC);
-DROP INDEX animal_id_index;
-CREATE INDEX vet_id_index ON visits(animal_id, vet_id, date_of_visit ASC);
+

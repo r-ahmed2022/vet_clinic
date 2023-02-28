@@ -90,8 +90,7 @@ CREATE TABLE visits (
     FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
 
-
-
-
-
-
+-- increase speed
+CREATE INDEX animal_id_index ON visits(animal_id ASC);
+DROP INDEX animal_id_index;
+CREATE INDEX vet_id_index ON visits(animal_id, vet_id, date_of_visit ASC);

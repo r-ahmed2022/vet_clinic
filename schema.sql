@@ -96,7 +96,6 @@ ALTER TABLE owners ADD COLUMN email varchar(120)
 
 CREATE INDEX animalsId_asc_visits ON visits(animal_id ASC);
 
-CREATE INDEX vet_id_index ON visits(animal_id, vet_id, date_of_visit ASC);
 
 CREATE INDEX owners_email_asc ON owners(email ASC);
 

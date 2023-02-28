@@ -103,6 +103,23 @@ SELECT COUNT(*) FROM visits WHERE vet_id = ( SELECT vets.id FROM vets left JOIN 
 SELECT species.name, COUNT(species.name) as total FROM visits JOIN vets ON visits.vet_id = vets.id JOIN animals ON visits.animal_id = animals.id JOIN species ON animals.species_id = species.id WHERE vets.name = 'Maisy Smith'GROUP BY species.name ORDER BY total DESC LIMIT 1;
 
 
+-- perfomance audit queries
 
+SELECT COUNT(*) FROM visits where animal_id = 4;
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+---post pefomance audit
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+
+
+SELECT * FROM visits where vet_id = 2;
+ explain analyze SELECT * FROM visits where vet_id = 2;
+---post pefomance audit
+ explain analyze SELECT * FROM visits where vet_id = 2;
+
+
+ SELECT * FROM owners where email = 'owner_18327@mail.com';
+ explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
+--post indexing
+ explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
 
 
